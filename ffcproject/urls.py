@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import ffcapp.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ffcapp.views.home, name='home'),
     path('accounts/', include('accounts.urls')),
-]
+    path('connect/', ffcapp.views.connect, name='connect'),
+    path('newcafe/', ffcapp.views.newcafe,name='newcafe')
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
