@@ -1,5 +1,12 @@
 <h1>main page</h1>
 
-<a href="{%url 'login'%}">login</a>
-<a href="{%url 'signup'%}">signup</a>
-<a href="{%url 'ceosignup'%}">ceosignup</a>
+{% if user.is_authenticated %}
+    {{user.username}}님
+{% else %}
+    <a href="{%url 'login'%}"><button>로그인</button></a>
+    <a href="{%url 'connect'%}"><button>회원가입</button></a>
+{% endif %}
+
+{% for c in cafe.all %}
+    {{c.name}}
+{% endfor %}

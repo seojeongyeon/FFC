@@ -1,0 +1,12 @@
+<h1>카페등록페이지</h1>
+<hr>
+<div class='container'>
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{cafe.as_table}}
+        </table>
+        <br>
+        <input class="btn btn-dark" type="submit" value="제출하기">
+    </form>
+<div>
