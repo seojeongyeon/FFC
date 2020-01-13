@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ffcapp.apps.FfcappConfig',
     'accounts.apps.AccountsConfig',
+    
 ]
 
 MIDDLEWARE = [

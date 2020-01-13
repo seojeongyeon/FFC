@@ -7,6 +7,11 @@
     <a href="{%url 'connect'%}"><button>회원가입</button></a>
 {% endif %}
 
-{% for c in cafe.all %}
-    {{c.name}}
+{% for cafe in cafes.all %}
+    <div class="container">
+        <h1>{{ cafe.name }}</h1>
+
+    </div>
 {% endfor %}
+<hr>
+<a href="{%url 'newcafe'%}">카페등록하기</a>

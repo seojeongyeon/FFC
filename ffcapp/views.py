@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
-from .forms import CafePost
+from .forms import CafePost,ImagePost
+from django.db import transaction
+from .models import Cafe
 
 # Create your views here.
-def home(request):
-    return render(request, 'home.html')
+def home(request): 
+    cafes = Cafe.objects
+    return render(request, 'home.html', {'cafes':cafes})
 
 def connect(request):
     return render(request, 'connect.html')
@@ -13,10 +16,16 @@ def connect(request):
 
 def newcafe(request):
     if request.method =='POST':
-        cafe = CafePost(request.POST)
-        if cafe.is_valid():
-            cafe.save()
+        form = CafePost(request.POST)
+        image_form =  ImagePost(request.POST, request.FILES)
+        if form.is_valid() and image_form.is_valid():
+            # form.save()
+            cafepost = form.save(commit=False)
+            cafepost.user = request.user
+            cafepost.save()
+            image_form.save()            
             return redirect('home')
     else:
-        cafe = CafePost()
-    return render(request,'newcafe.html',{'cafe':cafe})
+        form = CafePost()
+        upimage = ImagePost()
+    return render(request,'newcafe.html',{'form':form,'upimage':upimage,})
