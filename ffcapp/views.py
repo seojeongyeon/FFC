@@ -4,14 +4,15 @@ from django.db import transaction
 from .models import Cafe
 from django.contrib.auth.models import User
 from django.contrib import auth
+from accounts.models import Profile
 
 # Create your views here.
 def home(request): 
     cafes = Cafe.objects
-    return render(request, 'home.html', {'cafes':cafes})
+    ceo = True if (Profile.ceo == True) else False
+    print(ceo)
+    return render(request, 'home.html', {'cafes':cafes, 'ceo':ceo})
 
-def connect(request):
-    return render(request, 'connect.html')
 
 # def newcafe(request):
 #     return render(request, 'newcafe.html')

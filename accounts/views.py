@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Profile
 # Create your views here.
 def signup(request):
     if request.method == 'POST':
@@ -13,30 +14,13 @@ def signup(request):
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
                 auth.login(request, user)
+                Profile.ceo = True if (request.POST.get('ceo')) else False
                 return redirect('home')
         else:
             return render(request, 'signup.html', {'error': 'Passwords must match'})
     else:
         # User wants to enter info
         return render(request, 'signup.html')
-
-def ceosignup(request):
-    if request.method == 'POST':
-        # User has info and wants an account now!
-        if request.POST['password1'] == request.POST['password2']:
-            try:
-                user = User.objects.get(username=request.POST['username'])
-                return render(request, 'ceosignup.html', {'error': 'Username has already been taken'})
-            except User.DoesNotExist:
-                user = User.objects.create_user(
-                    request.POST['username'], password=request.POST['password1'])
-                auth.login(request, user)
-                return redirect('home')
-        else:
-            return render(request, 'ceosignup.html', {'error': 'Passwords must match'})
-    else:
-        # User wants to enter info
-        return render(request, 'ceosignup.html')
 
 def login(request):
     if request.method == 'POST':
@@ -51,7 +35,9 @@ def login(request):
     else:
         return render(request, 'login.html')
    
-
+def logout(request):
+    auth.logout(request) 
+    return redirect('home')
 
 
 

@@ -2,9 +2,10 @@
 
 {% if user.is_authenticated %}
     {{user.username}}님
+    <a href="{% url 'logout' %}"><button>로그아웃</button></a>
 {% else %}
     <a href="{%url 'login'%}"><button>로그인</button></a>
-    <a href="{%url 'connect'%}"><button>회원가입</button></a>
+    <a href="{%url 'signup'%}"><button>회원가입</button></a>
 {% endif %}
 
 {% for cafe in cafes.all %}
@@ -14,5 +15,7 @@
     </div>
 {% endfor %}
 <hr>
-<a href="{%url 'newcafe'%}">카페등록하기</a>
+{% if ceo == True %}
+    <a href="{%url 'newcafe'%}">카페등록하기</a>
+{% endif %}
 
