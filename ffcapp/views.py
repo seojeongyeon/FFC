@@ -1,7 +1,9 @@
-from django.shortcuts import render,redirect
-from .forms import CafePost,ImagePost
+from django.shortcuts import render,redirect,get_object_or_404
+from .forms import CafePost,CommentForm
 from django.db import transaction
 from .models import Cafe
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 # Create your views here.
 def home(request): 
@@ -16,16 +18,27 @@ def connect(request):
 
 def newcafe(request):
     if request.method =='POST':
-        form = CafePost(request.POST)
-        image_form =  ImagePost(request.POST, request.FILES)
-        if form.is_valid() and image_form.is_valid():
-            # form.save()
-            cafepost = form.save(commit=False)
-            cafepost.user = request.user
-            cafepost.save()
-            image_form.save()            
+        form = CafePost(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()            
             return redirect('home')
+            
     else:
         form = CafePost()
-        upimage = ImagePost()
-    return render(request,'newcafe.html',{'form':form,'upimage':upimage,})
+        # image_form = ImagePost(instance=request.cafe.image)
+    return render(request,'newcafe.html',{'form':form})
+
+
+def detail(request, cafe_id):
+    cafes = get_object_or_404(Cafe, pk=cafe_id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.writer = request.user
+            comment.post = cafes
+            comment.save()
+            return redirect('detail', pk=cafe_id)
+    else:
+        form = CommentForm()
+    return render(request, 'detail.html', {'cafes':cafes,'form': form})   
