@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="홍영준, 조영완, 서정연">
+    <meta name="description" content="나에게 딱 맞는 카페 검색, FFC">
+    <meta name="keyword" content="카페, 검색">
+    <title>FFC</title>
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+</head>
+<body>
+    <header class="flex sb">
+        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
+        <nav>
+            <ul class="flex sb">
+                <li class="flex"><a href="login.html">로그인</a></li>
+                <li class="flex"><a href="signup.html">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main_img">
+        <h2 class="hidden">'카페명' 상세페이지</h2>
+    </section>
+    <main class="container flex-column">
+        <section>
+            <h2 class="hidden">카페 이미지</h2>
+            <ul class="img_box flex-wrap sb">
+                <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
+                <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
+                <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
+                <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="hidden">사용자 평점, 리뷰</h2>
+            <article>
+                <h3>카페 평점(160)</h3>
+                <ul class="rating_box flex-wrap sb">
+                    <li class="boxing">주차시설 24</li class="">
+                    <li class="boxing">반려동물 동행 88</li>
+                    <li class="boxing">주차시설 44</li>
+                    <li class="boxing">화장실 남녀구분 34</li>
+                    <li class="boxing">콘센트 98</li>
+                    <li class="boxing">이것 111</li>
+                    <li class="boxing">저것 124</li>
+                    <li class="boxing">등등등 41</li>
+                </ul>
+            </article>
+            <article>
+                <h3>사용자 리뷰</h3>
+                <ul class="review_box flex-wrap sb">
+                    <li class="boxing">
+                        <div>
+                            <p>노트북 작업하러 갔는데 카페 음악도 잔잔하고 조명도 밝지 않아서 좋았습니다. 음료도 맛있었어요~</p>
+                            <p>김멋사</p>
+                        </div>
+                    </li>
+                    <li class="boxing">
+                        <div>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asp</p>
+                            <p>김멋사</p>
+                        </div>
+                    </li>
+                    <li class="boxing">
+                        <div>
+                            <div>닉네임</div>
+                            <div>내용내용내용내용내용내용내용내용내용내용내용내용내용...</div>
+                        </div>
+                    </li>
+                    <li class="boxing">
+                        <div>
+                            <div>닉네임</div>
+                            <div>내용내용내용내용내용내용내용내용내용내용내용내용내용...</div>
+                        </div>
+                    </li>
+                    <li class="boxing">
+                        <div>
+                            <div>노트북 작업하러 갔는데 카페 음악도 잔잔하고 조명도 밝지 않아서 좋았습니다</div>
+                            <div>김멋사</div>
+                        </div>
+                    </li>
+                    <li class="boxing">
+                        <div>
+                            <div>노트북 작업하러 갔는데 카페 음악도 잔잔하고 조명도 밝지 않아서 좋았습니다</div>
+                            <div>김멋사</div>
+                        </div>
+                    </li>
+                </ul>
+                <button class="more">더 보기</button>
+
+            </article>
+        </section>
+        <section>
+            <h2 class="hidden">카페 정보</h2>
+            <article>
+                <h3>카페 정보</h3>
+                <div class="info_box ">
+                    <div class="boxing">
+                        <h1>믓쟁이 사자처럼</h1>
+                        <p>서울특별시 성북구 정릉동</p>
+                        <p>02-123-4567</p>
+                        <p>09:00~20:00</p>
+                    </div>
+                    <div class="boxing">
+                        <h4>카페 설명</h4>
+                        <p>
+                            서울의 최고 위치에 있는 서울신라호텔에서 도시의 모든 것을 맛볼 수 있습니다. 비즈니스 여행객과 관광객 모두 호텔의 시설과 서비스를 즐길 수 있습니다. 24시간
+                            룸서비스, Wi-Fi (무료/전 객실), 기념품 가게, 24시간 프런트 데스크, 장애인용 편의시설 등을 포함한 모든 필요한 시설이 가까이 있습니다.<br><br>
+                            일부 객실에는 평면 TV, 무선 인터넷, 금연 객실, 에어컨, 난방 등이 구비되어 있습니다. 호텔의 평화로운 분위기는 피트니스센터, 사우나, 실내 수영장, 스파,
+                            마사지 등을 포함한 자사의 레크리에이션 시설로 확장됩니다.<br><br>
+                            서울신라호텔에서 단순히 쉬면서 피로를 풀어주거나 활력이 넘치는 서울 탐험을 시작할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>카페 메뉴</h3>
+                <div class="menu_box flex-wrap sb">
+                    <ul class="boxing">
+                        <li>
+                            <h4>커피</h4>
+                        </li>
+                        <li>아메리카노</li>
+                        <li>헤이즐넛</li>
+                        <li>더치</li>
+                        <li>카푸치노</li>
+                        <li>카페모카</li>
+                        <li>카라멜모카</li>
+                        <li>에스프레소</li>
+
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>라떼</h4>
+                        </li>
+                        <li>카페라떼</li>
+                        <li>카라멜라떼</li>
+                        <li>초코라떼</li>
+                        <li>바닐라라떼</li>
+                        <li>녹차라떼</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>음료</h4>
+                        </li>
+                        <li>콜라/사이다</li>
+                        <li>우유</li>
+                        <li>오렌지쥬스</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>에이드</h4>
+                        </li>
+                        <li>레몬/자몽</li>
+                        <li>블루에이드</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>디저트</h4>
+                        </li>
+                        <li>딸기빙수</li>
+                        <li>쿠앤크빙수</li>
+                        <li>망고빙수</li>
+                        <li>티라미수</li>
+                        <li>딸기 케이크</li>
+                        <li>얼그레이 케이크</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>차</h4>
+                        </li>
+                        <li>녹차</li>
+                        <li>홍차</li>
+                        <li>유자차</li>
+                        <li>레몬차</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>스무디</h4>
+                        </li>
+                        <li>블루베리스무디</li>
+                        <li>요거트스무디</li>
+                        <li>그린스무디</li>
+                    </ul>
+                    <ul></ul>
+                    <ul></ul>
+                    <ul></ul>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

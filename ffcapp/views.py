@@ -10,7 +10,7 @@ from accounts.models import Profile
 def home(request): 
     cafes = Cafe.objects
     ceo = Profile.ceo
-    return render(request, 'home.html', {'cafes':cafes, 'ceo':ceo})
+    return render(request, 'main.html', {'cafes':cafes, 'ceo':ceo})
 
 
 # def newcafe(request):
@@ -50,3 +50,5 @@ def search(request):
         qs = qs.filter(name__icontains=q) # 제목에 q가 포함되어 있는 레코드만 필터링
     ceo = Profile.ceo
     return render(request, 'home.html', {'cafes' : qs,'q' : q, 'ceo':ceo})
+
+

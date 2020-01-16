@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="홍영준, 조영완, 서정연">
+    <meta name="description" content="나에게 딱 맞는 카페 검색, FFC">
+    <meta name="keyword" content="카페, 검색">
+    <title>FFC</title>
+    <link rel="stylesheet" href="{% static 'search.css' %}">
+</head>
+<body>
+    <header class="flex sb">
+        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
+        <nav>
+            <ul class="flex sb">
+                <li class="flex"><a href="login.html">로그인</a></li>
+                <li class="flex"><a href="signup.html">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="filter_box">
+        <ul class="filter flex">
+            <li><button>서울특별시 성북구</button></li>
+            <li><button>5시 ~ 9시</button></li>
+            <li><button>음료</button></li>
+            <li><button>분위기</button></li>
+            <li><button>케이크</button></li>
+            <li><button>필터 더보기</button></li>
+        </ul>
+    </div>
+    <main>
+        <section class="content_search">
+            <h2 class="hidden">검색결과</h2>
+            <div class="notice flex">
+                <p>16개의 검색결과가 있습니다.</p>
+            </div>
+            <div class="card_box">
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="2.jpg" alt=""></div>
+                        <div>
+                            <div class="card_name">믓쟁이 사자</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">서울특별시 성북구 정릉동</div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="2.jpg" alt=""></div>
+                        <div>
+                            <div class="card_name">믓쟁이 사자</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">서울특별시 성북구 정릉동</div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="2.jpg" alt=""></div>
+                        <div>
+                            <div class="card_name">믓쟁이 사자</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">서울특별시 성북구 정릉동</div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="2.jpg" alt=""></div>
+                        <div>
+                            <div class="card_name">믓쟁이 사자</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">서울특별시 성북구 정릉동</div>
+                        </div>
+                    </a>
+                </article>
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="2.jpg" alt=""></div>
+                        <div>
+                            <div class="card_name">믓쟁이 사자</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">서울특별시 성북구 정릉동</div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section class="map">
+            <h2 class="hidden">지도</h2>
+            <img src="2.jpg" alt="dd">
+        </section>
+    </main >
+
+</body>
+
+</html>

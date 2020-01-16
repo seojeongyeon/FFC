@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="홍영준, 조영완, 서정연">
+    <meta name="description" content="나에게 딱 맞는 카페 검색, FFC">
+    <meta name="keyword" content="카페, 검색">
+    <title>FFC</title>
+    <link rel="stylesheet" href="{% static 'write.css' %}">
+</head>
+
+<body>
+    <header class="flex sb">
+        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
+        <nav>
+            <ul class="flex sb">
+                <li class="flex"><a href="login.html">로그인</a></li>
+                <li class="flex"><a href="signup.html">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>카페 등록하기</h1>
+        <section>
+            <h2 class="boxing">카페정보</h2>
+            <div class="info_box boxing">
+                <div class="flex">
+                    <div><label for="">카페명</label></div>
+                    <div><input type="text"></div>
+                </div>
+                <div class="flex">
+                    <div><label for="">주소</label></div>
+                    <div><input type="text"></div>
+                </div>
+                <div class="flex">
+                    <div><label for="">전화번호</label></div>
+                    <div><input type="text"></div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <h2 class="boxing">메뉴</h2>
+            <div class="flex-wrap sb ">
+                <article class="checkbox_box boxing ">
+                    <legend>커피</legend>
+                    <div class="flex-wrap sb">
+                        <div><input type="checkbox" id="아메리카노"> <label for="아메리카노">아메리카노</label></div>
+                        <div><input type="checkbox" id="에스프레소"> <label for="에스프레소">에스프레소</label></div>
+                        <div><input type="checkbox" id="카푸치노"> <label for="카푸치노">카푸치노</label></div>
+                        <div><input type="checkbox" id="콜드브루"> <label for="콜드브루">콜드브루</label></div>
+                        <div><input type="checkbox" id="콜드브루"> <label for="콜드브루">콜드브루</label></div>
+                    </div>
+                </article class="checkbox_box boxing ">
+                <article class="checkbox_box boxing ">
+                    <legend>차</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="그린티"> <label for="그린티">그린티</label></div>
+                        <div><input type="checkbox" id="녹차"> <label for="녹차">녹차</label></div>
+                        <div><input type="checkbox" id="유자차"> <label for="유자차">유자차</label></div>
+                        <div><input type="checkbox" id="율무차"> <label for="율무차">율무차</label></div>
+                        <div><input type="checkbox" id="율무차"> <label for="율무차">율무차</label></div>
+                        <div><input type="checkbox" id="율무차"> <label for="율무차">율무차</label></div>
+                        <div><input type="checkbox" id="율무차"> <label for="율무차">율무차</label></div>
+                        <div><input type="checkbox" id="율무차"> <label for="율무차">율무차</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>에이드</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="자몽"> <label for="자몽">자몽</label></div>
+                        <div><input type="checkbox" id="레몬"> <label for="레몬">레몬</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>라떼</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="초코"> <label for="초코">초코</label></div>
+                        <div><input type="checkbox" id="카페"> <label for="카페">카페</label></div>
+                        <div><input type="checkbox" id="녹차"> <label for="녹차">녹차</label></div>
+                        <div><input type="checkbox" id="고구마"> <label for="고구마">고구마</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>디저트</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="허니브레드"> <label for="허니브레드">허니브레드</label></div>
+                        <div><input type="checkbox" id="와플"> <label for="와플">와플</label></div>
+                        <div><input type="checkbox" id="딸기케이크"> <label for="딸기케이크">딸기케이크</label></div>
+                        <div><input type="checkbox" id="티라미수"> <label for="티라미수">티라미수</label></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2 class="boxing">기타</h2>
+            <div class="flex-wrap sb">
+                <article class="checkbox_box boxing">
+                    <legend>주차공간</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="유"> <label for="유">유</label></div>
+                        <div><input type="checkbox" id="무"> <label for="무">무</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>테마?</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="노키즈존"> <label for="노키즈존">노키즈존</label></div>
+                        <div><input type="checkbox" id="애견카페"> <label for="애견카페">애견카페</label></div>
+                        <div><input type="checkbox" id="사주카카페"> <label for="사주카카페">사주카카페</label></div>
+                        <div><input type="checkbox" id="드로잉카페"> <label for="드로잉카페">드로잉카페</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>좌석크기(최대)</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="2"> <label for="2">2</label></div>
+                        <div><input type="checkbox" id="4"> <label for="4">4</label></div>
+                        <div><input type="checkbox" id="6"> <label for="6">6</label></div>
+                        <div><input type="checkbox" id="8"> <label for="8">8 이상</label></div>
+                    </div>
+                </article>
+                <article class="checkbox_box boxing">
+                    <legend>원두</legend>
+                    <div class="flex-wrap">
+                        <div><input type="checkbox" id="아라비카"> <label for="아라비카">아라비카</label></div>
+                        <div><input type="checkbox" id="로부스터"> <label for="로부스터">로부스터</label></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        </form>
+        </section>
+    </main>
+</body>
+
+</html>
