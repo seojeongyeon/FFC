@@ -1,28 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="홍영준, 조영완, 서정연">
-    <meta name="description" content="나에게 딱 맞는 카페 검색, FFC">
-    <meta name="keyword" content="카페, 검색">
-    <title>FFC</title>
-    <link rel="stylesheet" href="{% static 'main.css' %}">
-</head>
-<body>
-    <header class="flex sb">
-        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
-        <nav>
-            <ul class="flex sb">
-                <li class="flex"><a href="login.html">로그인</a></li>
-                <li class="flex"><a href="signup.html">회원가입</a></li>
-                <li class="flex"><a href="write.html">카페등록</a></li>
 
-            </ul>
-        </nav>
-    </header>
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+{% endblock %}
+
+{% block content %}
     <section class="searching_box flex c">
         <h2>나에게 딱 맞는 카페 검색</h2>
         <h1>FindFineCafe</h1>
@@ -30,7 +14,7 @@
             <form action="" class="flex sb ">
                 <input type="text" placeholder="지역">
                 <input type="text" placeholder="시간">
-                <button type="button" onclick="location.href=''">검색</button>
+                <button type="button" onclick="location.href='{% url 'move' %}'">검색</button>
             </form>
         </div>
     </section>
@@ -38,7 +22,7 @@
         <section class="recommend">
             <h3>공부하기 좋은 카페</h3>
             <ul class="box flex-wrap sb">
-                <li class="item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(2.jpg);">
+                <li class="item" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(2.jpg);">
                     <a href="#" >
                         6인 이상 넓은 테이블
                     </a>
@@ -143,6 +127,4 @@
             </div>
         </div>
     </footer>
-</body>
-
-</html>
+{% endblock %}

@@ -52,3 +52,5 @@ def search(request):
     return render(request, 'home.html', {'cafes' : qs,'q' : q, 'ceo':ceo})
 
 
+def move(request):
+    return render(request, 'signup2.html')

@@ -1,28 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="홍영준, 조영완, 서정연">
-    <meta name="description" content="나에게 딱 맞는 카페 검색, FFC">
-    <meta name="keyword" content="카페, 검색">
-    <title>FFC</title>
+
+{% block css %}
     <link rel="stylesheet" href="{% static 'signup.css' %}">
-</head>
-
-<body>
-    <header class="flex sb">
-        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
-        <nav>
-            <ul class="flex sb">
-                <li class="flex"><a href="login.html">로그인</a></li>
-                <li class="flex"><a href="signup.html">회원가입</a></li>
-            </ul>
-        </nav>
-    </header>
+{% endblock %}
+{% block content %}
     <section class="container">
         <h1 class="hidden">회원가입</h1>
         <form action="">
@@ -92,6 +75,4 @@
             <button type="submit">가입하기</button>
         </form>
     </section>
-</body>
-
-</html>
+{% endblock %}

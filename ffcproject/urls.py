@@ -26,4 +26,5 @@ urlpatterns = [
     path('newcafe/', ffcapp.views.newcafe,name='newcafe'),
     path('detail/<int:cafe_id>', ffcapp.views.detail, name='detail'),
     path('search/', ffcapp.views.search, name='search'),
+    path('move/', ffcapp.views.move, name='move'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
