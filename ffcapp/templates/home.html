@@ -11,7 +11,11 @@
 {% for cafe in cafes.all %}
     <div class="container">
         <a href="{%url 'detail' cafe.id %}"><h1>{{ cafe.name }}</h1></a>
-            
+        <form action="{%url 'search'%}" method="get">
+            <input type="text" name="q" value="{{ q }}">
+            <input type="submit" value="검색">
+            {{cafe_list}}
+        </form>
     </div>
 {% endfor %}
 <hr>
