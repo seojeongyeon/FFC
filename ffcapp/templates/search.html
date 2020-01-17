@@ -9,10 +9,10 @@
 <div class="filter_box">
     <ul class="filter flex">
         <li><input type="checkbox" id="btn-a" class="onclick" name="checkbox" value="a1" onclick="oneCheckbox(this)">
-            <div><label for="btn-a" class="labelBtn" onclick="">서울특별시 성북구</label></div>
+            <div><label for="btn-a" class="labelBtn" onclick="">{{ loc_search }}</label></div>
             <div class="clicked where">
                 <div><input type="text"></div>
-                <div class="flex-right"><button class="saveBtn">저장</button></div>
+                <div class="flex-right"><button class="saveBtn" >저장</button></div>
             </div>
         </li>
         <li><input type="checkbox" id="btn-b" class="onclick" name="checkbox" value="a2" onclick="oneCheckbox(this)">
@@ -97,69 +97,23 @@
     <section class="content_search">
         <h2 class="hidden">검색결과</h2>
         <div class="notice flex">
-            <p>16개의 검색결과가 있습니다.</p>
+            <p>{{ cafes|length }}개의 검색결과가 있습니다.</p>
         </div>
         <div class="card_box">
-            <article class="card">
-                <h3 class="hidden">카페 정보</h3>
-                <a href="detail.html" class="flex sb">
-                    <div><img src="2.jpg" alt=""></div>
-                    <div>
-                        <div class="card_name">믓쟁이 사자</div>
-                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                        <div class="card_description">딸기케이크가 맛있는 집</div>
-                        <div class="card_address">서울특별시 성북구 정릉동</div>
-                    </div>
-                </a>
-            </article>
-            <article class="card">
-                <h3 class="hidden">카페 정보</h3>
-                <a href="detail.html" class="flex sb">
-                    <div><img src="2.jpg" alt=""></div>
-                    <div>
-                        <div class="card_name">믓쟁이 사자</div>
-                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                        <div class="card_description">딸기케이크가 맛있는 집</div>
-                        <div class="card_address">서울특별시 성북구 정릉동</div>
-                    </div>
-                </a>
-            </article>
-            <article class="card">
-                <h3 class="hidden">카페 정보</h3>
-                <a href="detail.html" class="flex sb">
-                    <div><img src="2.jpg" alt=""></div>
-                    <div>
-                        <div class="card_name">믓쟁이 사자</div>
-                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                        <div class="card_description">딸기케이크가 맛있는 집</div>
-                        <div class="card_address">서울특별시 성북구 정릉동</div>
-                    </div>
-                </a>
-            </article>
-            <article class="card">
-                <h3 class="hidden">카페 정보</h3>
-                <a href="detail.html" class="flex sb">
-                    <div><img src="2.jpg" alt=""></div>
-                    <div>
-                        <div class="card_name">믓쟁이 사자</div>
-                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                        <div class="card_description">딸기케이크가 맛있는 집</div>
-                        <div class="card_address">서울특별시 성북구 정릉동</div>
-                    </div>
-                </a>
-            </article>
-            <article class="card">
-                <h3 class="hidden">카페 정보</h3>
-                <a href="detail.html" class="flex sb">
-                    <div><img src="2.jpg" alt=""></div>
-                    <div>
-                        <div class="card_name">믓쟁이 사자</div>
-                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                        <div class="card_description">딸기케이크가 맛있는 집</div>
-                        <div class="card_address">서울특별시 성북구 정릉동</div>
-                    </div>
-                </a>
-            </article>
+            {% for cafe in cafes%}
+                <article class="card">
+                    <h3 class="hidden">카페 정보</h3>
+                    <a href="detail.html" class="flex sb">
+                        <div><img src="{{ cafe.mainimage.url}}" alt=""></div>
+                        <div>
+                            <div class="card_name">{{ cafe.name }}</div>
+                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                            <div class="card_description">딸기케이크가 맛있는 집</div>
+                            <div class="card_address">{{ cafe.address }}</div>
+                        </div>
+                    </a>
+                </article>
+            {% endfor %}
         </div>
     </section>
     <section class="map">
@@ -179,7 +133,4 @@
     }
 </script>
 
-
-
-출처: https://hyunssssss.tistory.com/229 [현's 블로그]
 {% endblock %}

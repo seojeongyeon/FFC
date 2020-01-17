@@ -47,10 +47,12 @@ a:hover {
 .sb {
     justify-content: space-between !important;
 }
+
 .hidden {
     visibility: hidden;
     height: 0;
 }
+
 header {
     width: 75%;
     height: 80px;
@@ -82,9 +84,9 @@ header ul>li {
 
 .filter_box {
     width: 100%;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    height: 50px;
+    border-top: 1px solid rgba(231, 213, 198);
+    border-bottom: 1px solid rgba(231, 213, 198);
+    height: 3rem;
     padding-left: 20px;
     box-sizing: border-box;
 }
@@ -95,23 +97,25 @@ header ul>li {
 }
 
 .filter>li {
-    height: 100%;
+    height: 80%;
     margin-right: 0.9rem;
     display: flex;
     align-items: center;
-}
-
-.filter>li>button {
-    border: 1px solid lightgray;
-    padding: 0.8em;
-    font-size: 13px;
+    position: relative;
+    border: 1px solid rgba(231, 213, 198);
+    font-size: 1rem;
     background: none;
     border-radius: 1.5em;
-
+    /* padding: 0 0.8em; */
 }
 
-.filter>li>button:hover {
-    border: 1px solid black;
+.filter>li>div:nth-child(2) {
+    height: 100%;
+}
+
+.filter>li:hover {
+    border: 1px solid rgb(231, 160, 102);
+    background: rgba(231, 213, 198, 0.3);
 }
 
 main {
@@ -126,11 +130,13 @@ main {
     overflow-y: scroll;
     height: 800px;
 }
+
 /* 높이 딱 맞게 하는 법 모르겠음 */
 
-.content_search::-webkit-scrollbar { 
-    display: none; 
+.content_search::-webkit-scrollbar {
+    display: none;
 }
+
 .notice {
     width: 100%;
     height: 3rem;
@@ -139,11 +145,12 @@ main {
 .card_box {
     width: 100%;
 }
+
 .card {
     width: 100%;
     height: 16rem;
     padding: 1rem 0;
-    border-top: 1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgba(231, 213, 198);
 }
 
 .card>a {
@@ -157,11 +164,13 @@ main {
     margin-right: 1rem;
 
 }
+
 .card>a>div:nth-child(2n+2) {
     width: 70%;
     height: 100%;
 
 }
+
 .card>a>div>img {
     width: 100%;
     height: 100%;
@@ -169,6 +178,7 @@ main {
     border-radius: 10px;
 
 }
+
 .card>a .card_name {
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -194,4 +204,127 @@ main {
 
 .map>img {
     width: 100%;
+}
+
+
+#btn-a,
+#btn-b,
+#btn-c,
+#btn-d,
+#btn-e,
+#btn-f {
+    position: fixed;
+    left: -9999px;
+}
+
+.flex-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.clicked {
+    box-sizing: border-box;
+    display: none;
+    padding: 1em;
+    border-radius: 0.5em;
+    /* background: rgba(231, 213, 198); */
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 37px !important;
+    border: solid 0.5px rgba(118, 118, 118, 0.28);
+
+}
+
+.onclick:checked~.clicked {
+    display: block;
+    position: absolute;
+    top: 3.5em;
+}
+
+.labelBtn {
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 0 1rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 200%;
+
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.saveBtn {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 0.5em;
+    background: rgba(231, 213, 198);
+}
+
+.filter_list>div>label {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.filter_list>div {
+    width: 45%;
+    height: 3em;
+    font-size: 1rem;
+}
+.filter_list>div>input[type=checkbox] {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+.where {
+    width: 30em;
+    /* height: 8em;
+    padding: 1em 1.3em; */
+}
+
+.where>div {
+    width: 100%;
+    height: 50%;
+
+}
+
+.where>div>input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.5em;
+    border: 0.5px solid rgba(231, 213, 198);
+    border-radius: 0.5em;
+    padding-left: 1em;
+    font-size: 1rem;
+
+}
+.time {
+    width: 300px;
+    height: 200px;
+}
+
+.beverage {
+    width: 20em;
+}
+
+.filter_list>div {
+    width: 45%;
+    height: 3em;
+    font-size: 1rem;
+}
+
+.mood {
+    width: 20em;
+}
+
+.cake {
+    width: 20em;
+}
+
+.more_filter {
+    width: 31em;
 }
