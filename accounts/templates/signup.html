@@ -1,28 +1,80 @@
-<h1>사용자 회원가입</h1>
-
-{% if error %}
-{{ error }}
-<br>
-<br>
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
 
 
-<form method="POST" action="{%url 'signup'%}">
-    {% csrf_token %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <h1 class="hidden">회원가입</h1>
+        <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
 
-    ID:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password1" type="password" value="">
-    <br>
-    Confirm Password:
-    <br>
-    <input name="password2" type="password" value="">
-    <br>
-    <input name="ceo" type="checkbox" value="True"> 사장님이신가요?
-    <br>
-    <input class="btn btn-primary" type="submit" value="Sign Up!">
-</form>
+            <section>
+                <h3>회원종류</h3>
+                <select name="ceo" selected="selected">
+                    <option value="False">개인</option>
+                    <option value="True">사업자</option>
+                </select>
+            </section>
+            <section>
+                <h3>아이디</h3>
+                <div>
+                    <input name="username" type="text" value="">
+                </div>
+            </section>
+            <section>
+                <h3>비밀번호</h3>
+                <div>
+                    <input name="password1" type="password" value="">
+                </div>
+            </section>
+            <section>
+                <h3>비밀번호 확인</h3>
+                <div>
+                    <input name="password2" type="password" value="">
+                </div>
+            </section>
+            <section>
+                <h3>닉네임</h3>
+                <div>
+                    <input name="nickname" type="text" value="">
+                </div>
+            </section>
+            <section>
+                <h3>이름</h3>
+                <div>
+                    <input type="text">
+                </div>
+            </section>
+            <section>
+                <h3>생년월일</h3>
+                <div>
+                    <input type="date">
+                </div>
+            </section>
+            <section>
+                <h3>성별</h3>
+                <select name="" id="">
+                    <option value="선택">선택</option>
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                </select>
+            </section>
+            <section>
+                <h3>이메일</h3>
+                <div>
+                    <input type="email">
+                </div>
+            </section>
+            <section>
+                <h3>휴대폰</h3>
+                <div>
+                    <input type="tel">
+                </div>
+            </section>
+            <button type="submit">가입하기</button>
+        </form>
+    </section>
+{% endblock %}

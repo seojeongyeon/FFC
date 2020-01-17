@@ -9,19 +9,61 @@
     <main class="container">
         <h1>카페 등록하기</h1>
         <section>
+            <form method='POST' action="{% url 'write'%}" enctype="multipart/form-data" >
+            {% csrf_token %}
             <h2 class="boxing">카페정보</h2>
             <div class="info_box boxing">
                 <div class="flex">
                     <div><label for="">카페명</label></div>
-                    <div><input type="text"></div>
+                    <div>{{form.name}}</div>
                 </div>
                 <div class="flex">
                     <div><label for="">주소</label></div>
-                    <div><input type="text"></div>
+                    <div>{{form.address}}</div>
                 </div>
                 <div class="flex">
                     <div><label for="">전화번호</label></div>
-                    <div><input type="text"></div>
+                    <div>{{form.phonenumber}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">오픈 시간</label></div>
+                    <div>{{form.start_time}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">마감 시간</label></div>
+                    <div>{{form.end_time}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">휴일</label></div>
+                    <div>{{form.holiday}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">상세정보</label></div>
+                    <div>{{form.content}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">콘센트 정보</label></div>
+                    <div >{{form.socket}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for="">대표 이미지</label></div>
+                    <div>{{form.mainimage}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for=""></label></div>
+                    <div>{{form.image1}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for=""></label></div>
+                    <div>{{form.image2}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for=""></label></div>
+                    <div>{{form.image3}}</div>
+                </div>
+                <div class="flex">
+                    <div><label for=""></label></div>
+                    <div>{{form.image4}}</div>
                 </div>
             </div>
 
@@ -117,6 +159,7 @@
                 </article>
             </div>
         </section>
+        <input class="btn btn-dark" type="submit" value="등록하기">
         </form>
         </section>
     </main>

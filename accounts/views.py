@@ -13,8 +13,11 @@ def signup(request):
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'])
+                ceo = request.POST['ceo']
+                nickname = request.POST['nickname']
+                profile = Profile(user=user, ceo=ceo, nickname=nickname)
+                profile.save()
                 auth.login(request, user)
-                Profile.ceo = True if (request.POST.get('ceo')) else False
                 return redirect('home')
         else:
             return render(request, 'signup.html', {'error': 'Passwords must match'})

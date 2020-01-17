@@ -1,33 +1,181 @@
-<img src="{{ cafes.mainimage.url }}" width = "300" height="300">
-<img src="{{ cafes.image1.url }}" width = "300" height="300">
-<img src="{{ cafes.image2.url }}" width = "300" height="300">
-<img src="{{ cafes.image3.url }}" width = "300" height="300">
-<img src="{{ cafes.image4.url }}" width = "300" height="300">
+{% extends 'base.html' %}
+{% load static %}
 
-<hr>
-{% if request.user.is_active %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">후기 작성</button>
-</form>
-{% else %}
-<div class="alert alert-warning">로그인된 사용자만 댓글을 작성할 수 있습니다.</div>
-{% endif %}
 
-<hr>
-<div id="comment">
-    {% for comment in cafes.comments.all %}
-    <div class="comment-list">
-        <a href="#">{{ comment.writer }}</a>
-        <small>{{ comment.created_date }}</small>
-        <p>{{comment.score}}점</p>
-        <p>{{ comment.text|linebreaks }}</p>
-    </div>
-    {% empty %}
-    <div class="comment-list">
-        <p>작성된 댓글이 없습니다!</p>
-    </div>
-    {% endfor %}
-</div>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="main_img" style="background-image: url({{ cafes.mainimage.url }});">
+        <h2 class="hidden">'{{ cafes.name }}' 상세페이지</h2>
+    </section>
+    <main class="container flex-column">
+        <section>
+            <h2 class="hidden">카페 이미지</h2>
+            <ul class="img_box flex-wrap sb">
+                <li><img src="{{ cafes.image1.url }}" alt="카페이미지"></li>
+                <li><img src="{{ cafes.image2.url }}" alt="카페이미지"></li>
+                <li><img src="{{ cafes.image3.url }}" alt="카페이미지"></li>
+                <li><img src="{{ cafes.image4.url }}" alt="카페이미지"></li>
+                
+            </ul>
+        </section>
+        
 
+        <section>
+            <article>
+                <h3>{{ cafes.name }}</h3>
+                <div class="info_box ">
+                    <div class="boxing">
+                        <p>{{ cafes.address }}</p>
+                        <p>{{ cafes.phonenumber }}</p>
+                        <p>{{ cafes.start_time }} - {{ cafes.end_time }}</p>
+                    </div>
+                    <div class="boxing">
+                        <p>{{ cafes.content }}</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>카페 메뉴</h3>
+                <div class="menu_box flex-wrap sb">
+                    <ul class="boxing">
+                        <li>
+                            <h4>커피</h4>
+                        </li>
+                        <li>아메리카노</li>
+                        <li>헤이즐넛</li>
+                        <li>더치</li>
+                        <li>카푸치노</li>
+                        <li>카페모카</li>
+                        <li>카라멜모카</li>
+                        <li>에스프레소</li>
+
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>라떼</h4>
+                        </li>
+                        <li>카페라떼</li>
+                        <li>카라멜라떼</li>
+                        <li>초코라떼</li>
+                        <li>바닐라라떼</li>
+                        <li>녹차라떼</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>음료</h4>
+                        </li>
+                        <li>콜라/사이다</li>
+                        <li>우유</li>
+                        <li>오렌지쥬스</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>에이드</h4>
+                        </li>
+                        <li>레몬/자몽</li>
+                        <li>블루에이드</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>디저트</h4>
+                        </li>
+                        <li>딸기빙수</li>
+                        <li>쿠앤크빙수</li>
+                        <li>망고빙수</li>
+                        <li>티라미수</li>
+                        <li>딸기 케이크</li>
+                        <li>얼그레이 케이크</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>차</h4>
+                        </li>
+                        <li>녹차</li>
+                        <li>홍차</li>
+                        <li>유자차</li>
+                        <li>레몬차</li>
+                    </ul>
+                    <ul class="boxing">
+                        <li>
+                            <h4>스무디</h4>
+                        </li>
+                        <li>블루베리스무디</li>
+                        <li>요거트스무디</li>
+                        <li>그린스무디</li>
+                    </ul>
+                    <ul></ul>
+                    <ul></ul>
+                    <ul></ul>
+                </div>
+            </article>
+            <h2 class="hidden">사용자 평점, 리뷰</h2>
+
+
+            <!-- <article>
+                <h3>카페 평점(160)</h3>
+                <ul class="rating_box flex-wrap sb">
+                    <li class="boxing">주차시설 24</li class="">
+                    <li class="boxing">반려동물 동행 88</li>
+                    <li class="boxing">주차시설 44</li>
+                    <li class="boxing">화장실 남녀구분 34</li>
+                    <li class="boxing">콘센트 98</li>
+                    <li class="boxing">이것 111</li>
+                    <li class="boxing">저것 124</li>
+                    <li class="boxing">등등등 41</li>
+                </ul>
+
+               
+          
+
+            <hr>
+            
+
+
+            </div>
+            </article> -->
+            <article>
+                <h3>사용자 리뷰 & 평점</h3>
+                <div class="boxing" style="background:#F3F0DE;">
+                    {% if request.user.is_active %}
+                    <form method="post">
+                    {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">후기 작성</button>
+                    </form>
+                    {% else %}
+                    <div class="alert alert-warning">로그인된 사용자만 댓글을 작성할 수 있습니다.</div>
+                    {% endif %}
+                </div>
+                <ul class="review_box flex-wrap sb">
+                {% for comment in cafes.comments.all %}
+                
+                    <li class="boxing">
+                        <div>
+                            <a href="#">{{ comment.writer }}</a>
+                            <small>{{ comment.created_date }}</small>
+                            <p>{{comment.score}}점</p>
+                            <p>{{ comment.text|linebreaks }}</p>
+                        </div>
+                    </li>
+                    
+                
+                {% empty %}
+                <div class="comment-list">
+                    <p>작성된 댓글이 없습니다!</p>
+                </div>
+                {% endfor %}
+                </ul>
+                <button class="more">더 보기</button>
+
+            </article>
+        </section>
+        <section>
+            <h2 class="hidden">카페 정보</h2>
+            
+            
+        </section>
+
+    </main>
+{% endblock %}

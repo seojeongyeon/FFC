@@ -15,14 +15,25 @@
 </head>
 <body>
     <header class="flex sb">
-        <div class="flex"><a href="main.html" class="logo">FFC</a></div>
+        <div class="flex"><a href="{% url 'home' %}" class="logo">FFC</a></div>
         <nav>
-            <ul class="flex sb">
-                <li class="flex"><a href="login.html">로그인</a></li>
-                <li class="flex"><a href="signup.html">회원가입</a></li>
-                <li class="flex"><a href="write.html">카페등록</a></li>
-
-            </ul>
+            {% if user.is_authenticated %}
+                <ul class="flex sb">
+                    <li class="flex">{{ user.profile.nickname }}</li>
+                    <li class="flex"><a href="{% url 'logout' %}">로그아웃</a></li>
+                    {% if user.profile.ceo %}
+                        <li class="flex"><a href="{% url 'write' %}">카페등록</a></li>
+                    {% else %}
+                        <li class="flex"></li>
+                    {% endif %}
+                </ul>
+            {% else %}
+                <ul class="flex sb">
+                    <li class="flex"></li>
+                    <li class="flex"><a href="{% url 'login' %}">로그인</a></li>
+                    <li class="flex"><a href="{% url 'signup' %}">회원가입</a></li>
+                </ul>
+            {% endif %}
         </nav>
     </header>
 

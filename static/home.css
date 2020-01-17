@@ -69,8 +69,7 @@ header ul>li {
 
 /* 여기까지 공통 css @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 .searching_box {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../1.jpg);
-    ;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../1.jpg); */
     background-size: cover;
     background-position: 0% 80%;
     font-family: Arial, Helvetica, sans-serif;
