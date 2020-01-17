@@ -21,7 +21,7 @@
                 <ul class="flex sb">
                     <li class="flex">{{ user.last_name }}</li>
                     <li class="flex"><a href="{% url 'logout' %}">로그아웃</a></li>
-                    {% if ceo %}
+                    {% if user.profile.ceo %}
                         <li class="flex"><a href="{% url 'write' %}">카페등록</a></li>
                     {% endif %}
                 </ul>
