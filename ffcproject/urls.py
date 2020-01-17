@@ -23,8 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ffcapp.views.home, name='home'),
     path('accounts/', include('accounts.urls')),
-    path('newcafe/', ffcapp.views.newcafe,name='newcafe'),
-    path('detail/<int:cafe_id>', ffcapp.views.detail, name='detail'),
     path('search/', ffcapp.views.search, name='search'),
-    path('move/', ffcapp.views.move, name='move'),
+    path('write/', ffcapp.views.write, name='write'),
+    path('detail/<int:cafe_id>', ffcapp.views.detail, name='detail'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

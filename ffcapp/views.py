@@ -8,15 +8,22 @@ from accounts.models import Profile
 
 # Create your views here.
 def home(request): 
-    cafes = Cafe.objects
     ceo = Profile.ceo
-    return render(request, 'main.html', {'cafes':cafes, 'ceo':ceo})
+    return render(request, 'home.html', {'ceo':ceo})
+
+def search(request):
+    qs = Cafe.objects.all()
+    q = request.GET.get('q', '') # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
+    if q: # q가 있으면
+        qs = qs.filter(name__icontains=q) # 제목에 q가 포함되어 있는 레코드만 필터링
+    ceo = Profile.ceo
+    return render(request, 'search.html', {'cafes' : qs,'q' : q, 'ceo':ceo})
 
 
 # def newcafe(request):
 #     return render(request, 'newcafe.html')
 
-def newcafe(request):
+def write(request):
     if request.method =='POST':
         form = CafePost(request.POST, request.FILES)
         if form.is_valid():
@@ -26,7 +33,7 @@ def newcafe(request):
     else:
         form = CafePost()
         # image_form = ImagePost(instance=request.cafe.image)
-    return render(request,'newcafe.html',{'form':form})
+    return render(request,'write.html', {'form':form})
 
 
 def detail(request, cafe_id):
@@ -42,15 +49,3 @@ def detail(request, cafe_id):
     else:
         form = CommentForm()
     return render(request, 'detail.html', {'cafes':cafes,'form': form})   
-
-def search(request):
-    qs = Cafe.objects.all()
-    q = request.GET.get('q', '') # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
-    if q: # q가 있으면
-        qs = qs.filter(name__icontains=q) # 제목에 q가 포함되어 있는 레코드만 필터링
-    ceo = Profile.ceo
-    return render(request, 'home.html', {'cafes' : qs,'q' : q, 'ceo':ceo})
-
-
-def move(request):
-    return render(request, 'signup2.html')

@@ -1,21 +1,28 @@
-<h1>Login</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-{% if error %}
-{{ error }}
-<br>
-<br>
-{% endif %}
 
-<form method="POST" action="{% url 'login'%}">
-    {% csrf_token %}
-    ID:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password" type="password" value="">
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Login">
-</form>
+{% block css %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+    <section class="container">
+        <h1 class="hidden">로그인</h1>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <section>
+                <h3>아이디</h3>
+                <div>
+                    <input name="username" type="text" value="">
+                </div>
+            </section>
+            <section>
+                <h3>비밀번호</h3>
+                <div>
+                    <input name="password" type="password" value="">
+                </div>
+            </section>
+            <button type="submit">로그인</button>
+        </form>
+    </section>
+{% endblock %}
