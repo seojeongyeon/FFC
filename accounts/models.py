@@ -7,5 +7,6 @@ from django.contrib import auth
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=6, null=True)
     ceo = models.BooleanField(default=False)
 

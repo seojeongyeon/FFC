@@ -19,14 +19,17 @@
         <nav>
             {% if user.is_authenticated %}
                 <ul class="flex sb">
-                    <li class="flex">{{ user.last_name }}</li>
+                    <li class="flex">{{ user.profile.nickname }}</li>
                     <li class="flex"><a href="{% url 'logout' %}">로그아웃</a></li>
                     {% if user.profile.ceo %}
                         <li class="flex"><a href="{% url 'write' %}">카페등록</a></li>
+                    {% else %}
+                        <li class="flex"></li>
                     {% endif %}
                 </ul>
             {% else %}
                 <ul class="flex sb">
+                    <li class="flex"></li>
                     <li class="flex"><a href="{% url 'login' %}">로그인</a></li>
                     <li class="flex"><a href="{% url 'signup' %}">회원가입</a></li>
                 </ul>
