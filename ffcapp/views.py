@@ -8,17 +8,14 @@ from accounts.models import Profile
 
 # Create your views here.
 def home(request): 
-    ceo = Profile.ceo
-    print(ceo)
-    return render(request, 'home.html', {'ceo':ceo})
+    return render(request, 'home.html')
 
 def search(request):
     qs = Cafe.objects.all()
     q = request.GET.get('q', '') # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
     if q: # q가 있으면
         qs = qs.filter(name__icontains=q) # 제목에 q가 포함되어 있는 레코드만 필터링
-    ceo = Profile.ceo
-    return render(request, 'search.html', {'cafes' : qs,'q' : q, 'ceo':ceo})
+    return render(request, 'search.html', {'cafes' : qs,'q' : q})
 
 
 # def newcafe(request):
