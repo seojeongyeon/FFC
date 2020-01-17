@@ -11,11 +11,13 @@ def home(request):
     return render(request, 'home.html')
 
 def search(request):
+    if request.method == 'GET':
+        loc_search = request.GET.get('loc_name')
     qs = Cafe.objects.all()
     q = request.GET.get('q', '') # GET request의 인자중에 q 값이 있으면 가져오고, 없으면 빈 문자열 넣기
     if q: # q가 있으면
         qs = qs.filter(name__icontains=q) # 제목에 q가 포함되어 있는 레코드만 필터링
-    return render(request, 'search.html', {'cafes' : qs,'q' : q})
+    return render(request, 'search.html', {'cafes' : qs,'q' : q, 'loc_search':loc_search})
 
 
 # def newcafe(request):

@@ -11,10 +11,10 @@
         <h2>나에게 딱 맞는 카페 검색</h2>
         <h1>FindFineCafe</h1>
         <div class="search flex">
-            <form method="GET" action="{}" class="flex sb ">
-                <input type="text" placeholder="지역">
+            <form method="GET" action="{% url 'search' %}" class="flex sb ">
+                <input name="loc_name" type="text" value="" placeholder="지역">
                 <input type="text" placeholder="시간">
-                <button type="button" onclick="location.href='{% url 'search' %}'">검색</button>
+                <button type="summit">검색</button>
             </form>
         </div>
     </section>
