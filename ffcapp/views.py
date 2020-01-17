@@ -9,6 +9,7 @@ from accounts.models import Profile
 # Create your views here.
 def home(request): 
     ceo = Profile.ceo
+    print(ceo)
     return render(request, 'home.html', {'ceo':ceo})
 
 def search(request):

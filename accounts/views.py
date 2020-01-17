@@ -14,6 +14,7 @@ def signup(request):
                 user = User.objects.create_user(
                     request.POST['username'], password=request.POST['password1'], last_name=request.POST['nickname'],)
                 auth.login(request, user)
+                print(request.POST['ceo'])
                 Profile.ceo = True if (request.POST.get('ceo')) else False
                 return redirect('home')
         else:
