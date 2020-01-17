@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="{% static 'detail.css' %}">
 {% endblock %}
 {% block content %}
-    <section class="main_img">
-        <h2 class="hidden">'카페명' 상세페이지</h2>
+    <section class="main_img" style="background-image: url({{ cafes.mainimage.url }});">
+        <h2 class="hidden">'{{ cafes.name }}' 상세페이지</h2>
     </section>
     <main class="container flex-column">
         <section>
             <h2 class="hidden">카페 이미지</h2>
             <ul class="img_box flex-wrap sb">
-                <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
+                <li><img src="{{ cafes.image1.url }}" alt="카페이미지"></li>
                 <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
                 <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
                 <li><img src="https://www.twosome.co.kr:7009/Twosome_file/PRODUCT/1826_big_img" alt="카페이미지"></li>
@@ -84,20 +84,14 @@
                 <h3>카페 정보</h3>
                 <div class="info_box ">
                     <div class="boxing">
-                        <h1>믓쟁이 사자처럼</h1>
-                        <p>서울특별시 성북구 정릉동</p>
-                        <p>02-123-4567</p>
-                        <p>09:00~20:00</p>
+                        <h1>{{ cafes.name }}</h1>
+                        <p>{{ cafes.address }}</p>
+                        <p>{{ cafes.phonenumber }}</p>
+                        <p>{{ cafes.start_time }} - {{ cafes.end_time }}</p>
                     </div>
                     <div class="boxing">
                         <h4>카페 설명</h4>
-                        <p>
-                            서울의 최고 위치에 있는 서울신라호텔에서 도시의 모든 것을 맛볼 수 있습니다. 비즈니스 여행객과 관광객 모두 호텔의 시설과 서비스를 즐길 수 있습니다. 24시간
-                            룸서비스, Wi-Fi (무료/전 객실), 기념품 가게, 24시간 프런트 데스크, 장애인용 편의시설 등을 포함한 모든 필요한 시설이 가까이 있습니다.<br><br>
-                            일부 객실에는 평면 TV, 무선 인터넷, 금연 객실, 에어컨, 난방 등이 구비되어 있습니다. 호텔의 평화로운 분위기는 피트니스센터, 사우나, 실내 수영장, 스파,
-                            마사지 등을 포함한 자사의 레크리에이션 시설로 확장됩니다.<br><br>
-                            서울신라호텔에서 단순히 쉬면서 피로를 풀어주거나 활력이 넘치는 서울 탐험을 시작할 수 있습니다.
-                        </p>
+                        <p>{{ cafes.content }}</p>
                     </div>
                 </div>
             </article>
