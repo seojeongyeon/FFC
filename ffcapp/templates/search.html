@@ -3,91 +3,183 @@
 
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'search.css' %}">
+<link rel="stylesheet" href="{% static 'search.css' %}">
 {% endblock %}
 {% block content %}
-    <div class="filter_box">
-        <ul class="filter flex">
-            <li><button>서울특별시 성북구</button></li>
-            <li><button>5시 ~ 9시</button></li>
-            <li><button>음료</button></li>
-            <li><button>분위기</button></li>
-            <li><button>케이크</button></li>
-            <li><button>필터 더보기</button></li>
-        </ul>
-    </div>
-    <main>
-        <section class="content_search">
-            <h2 class="hidden">검색결과</h2>
-            <div class="notice flex">
-                <p>16개의 검색결과가 있습니다.</p>
+<div class="filter_box">
+    <ul class="filter flex">
+        <li><input type="checkbox" id="btn-a" class="onclick" name="checkbox" value="a1" onclick="oneCheckbox(this)">
+            <div><label for="btn-a" class="labelBtn" onclick="">서울특별시 성북구</label></div>
+            <div class="clicked where">
+                <div><input type="text"></div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
             </div>
-            <div class="card_box">
-                <article class="card">
-                    <h3 class="hidden">카페 정보</h3>
-                    <a href="detail.html" class="flex sb">
-                        <div><img src="2.jpg" alt=""></div>
-                        <div>
-                            <div class="card_name">믓쟁이 사자</div>
-                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                            <div class="card_description">딸기케이크가 맛있는 집</div>
-                            <div class="card_address">서울특별시 성북구 정릉동</div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card">
-                    <h3 class="hidden">카페 정보</h3>
-                    <a href="detail.html" class="flex sb">
-                        <div><img src="2.jpg" alt=""></div>
-                        <div>
-                            <div class="card_name">믓쟁이 사자</div>
-                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                            <div class="card_description">딸기케이크가 맛있는 집</div>
-                            <div class="card_address">서울특별시 성북구 정릉동</div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card">
-                    <h3 class="hidden">카페 정보</h3>
-                    <a href="detail.html" class="flex sb">
-                        <div><img src="2.jpg" alt=""></div>
-                        <div>
-                            <div class="card_name">믓쟁이 사자</div>
-                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                            <div class="card_description">딸기케이크가 맛있는 집</div>
-                            <div class="card_address">서울특별시 성북구 정릉동</div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card">
-                    <h3 class="hidden">카페 정보</h3>
-                    <a href="detail.html" class="flex sb">
-                        <div><img src="2.jpg" alt=""></div>
-                        <div>
-                            <div class="card_name">믓쟁이 사자</div>
-                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                            <div class="card_description">딸기케이크가 맛있는 집</div>
-                            <div class="card_address">서울특별시 성북구 정릉동</div>
-                        </div>
-                    </a>
-                </article>
-                <article class="card">
-                    <h3 class="hidden">카페 정보</h3>
-                    <a href="detail.html" class="flex sb">
-                        <div><img src="2.jpg" alt=""></div>
-                        <div>
-                            <div class="card_name">믓쟁이 사자</div>
-                            <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
-                            <div class="card_description">딸기케이크가 맛있는 집</div>
-                            <div class="card_address">서울특별시 성북구 정릉동</div>
-                        </div>
-                    </a>
-                </article>
+        </li>
+        <li><input type="checkbox" id="btn-b" class="onclick" name="checkbox" value="a2" onclick="oneCheckbox(this)">
+            <div><label for="btn-b" class="labelBtn" onclick="">5시 ~ 9시</label></div>
+            <div class="clicked time">
+                <div><input type="text"></div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
             </div>
-        </section>
-        <section class="map">
-            <h2 class="hidden">지도</h2>
-            <img src="2.jpg" alt="dd">
-        </section>
-    </main >
+        </li>
+        <li><input type="checkbox" id="btn-c" class="onclick" name="checkbox" value="a3" onclick="oneCheckbox(this)">
+            <div><label for="btn-c" class="labelBtn" onclick="">음료</label></div>
+            <div class="clicked beverage">
+                <div>
+                    <form action="">
+                        <div class="filter_list flex-wrap sb">
+                            <div><input type="checkbox" id="아메리카노"> <label for="아메리카노">아메리카노</label></div>
+                            <div><input type="checkbox" id="에스프레소"> <label for="에스프레소">에스프레소</label></div>
+                            <div><input type="checkbox" id="카푸치노"> <label for="카푸치노">카푸치노</label></div>
+                            <div><input type="checkbox" id="콜드브루"> <label for="콜드브루">콜드브루</label></div>
+                            <div><input type="checkbox" id="더치"> <label for="더치">더치</label></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
+            </div>
+        </li>
+        <li><input type="checkbox" id="btn-d" class="onclick" name="checkbox" value="a4" onclick="oneCheckbox(this)">
+            <div><label for="btn-d" class="labelBtn" onclick="">음악</label></div>
+            <div class="clicked mood">
+                <div>
+                    <form action="">
+                        <div class="filter_list flex-wrap sb">
+                            <div><input type="checkbox" id="발라드"> <label for="발라드">발라드</label></div>
+                            <div><input type="checkbox" id="최신가요"> <label for="최신가요">최신가요</label></div>
+                            <div><input type="checkbox" id="아이돌"> <label for="아이돌">아이돌</label></div>
+                            <div><input type="checkbox" id="팝송"> <label for="팝송">팝송</label></div>
+                            <div><input type="checkbox" id="기타"> <label for="기타">기타</label></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
+            </div>
+        </li>
+        <li><input type="checkbox" id="btn-e" class="onclick" name="checkbox" value="a5" onclick="oneCheckbox(this)">
+            <div><label for="btn-e" class="labelBtn" onclick="">케이크</label></div>
+            <div class="clicked cake">
+                <div>
+                    <form action="">
+                        <div class="filter_list flex-wrap sb">
+                            <div><input type="checkbox" id="아메리카노"> <label for="아메리카노">아메리카노</label></div>
+                            <div><input type="checkbox" id="에스프레소"> <label for="에스프레소">에스프레소</label></div>
+                            <div><input type="checkbox" id="카푸치노"> <label for="카푸치노">카푸치노</label></div>
+                            <div><input type="checkbox" id="콜드브루"> <label for="콜드브루">콜드브루</label></div>
+                            <div><input type="checkbox" id="더치"> <label for="더치">더치</label></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
+            </div>
+        </li>
+        <li><input type="checkbox" id="btn-f" class="onclick" name="checkbox" value="a6" onclick="oneCheckbox(this)">
+            <div><label for="btn-f" class="labelBtn" onclick="">필터 더보기</label></div>
+            <div class="clicked more_filter">
+                <div>
+                    <form action="">
+                        <div class="filter_list flex-wrap sb">
+                            <div><input type="checkbox" id="발라드"> <label for="발라드">발라드</label></div>
+                            <div><input type="checkbox" id="최신가요"> <label for="최신가요">최신가요</label></div>
+                            <div><input type="checkbox" id="아이돌"> <label for="아이돌">아이돌</label></div>
+                            <div><input type="checkbox" id="팝송"> <label for="팝송">팝송</label></div>
+                            <div><input type="checkbox" id="기타"> <label for="기타">기타</label></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex-right"><button class="saveBtn">저장</button></div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<main>
+    <section class="content_search">
+        <h2 class="hidden">검색결과</h2>
+        <div class="notice flex">
+            <p>16개의 검색결과가 있습니다.</p>
+        </div>
+        <div class="card_box">
+            <article class="card">
+                <h3 class="hidden">카페 정보</h3>
+                <a href="detail.html" class="flex sb">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div>
+                        <div class="card_name">믓쟁이 사자</div>
+                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                        <div class="card_description">딸기케이크가 맛있는 집</div>
+                        <div class="card_address">서울특별시 성북구 정릉동</div>
+                    </div>
+                </a>
+            </article>
+            <article class="card">
+                <h3 class="hidden">카페 정보</h3>
+                <a href="detail.html" class="flex sb">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div>
+                        <div class="card_name">믓쟁이 사자</div>
+                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                        <div class="card_description">딸기케이크가 맛있는 집</div>
+                        <div class="card_address">서울특별시 성북구 정릉동</div>
+                    </div>
+                </a>
+            </article>
+            <article class="card">
+                <h3 class="hidden">카페 정보</h3>
+                <a href="detail.html" class="flex sb">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div>
+                        <div class="card_name">믓쟁이 사자</div>
+                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                        <div class="card_description">딸기케이크가 맛있는 집</div>
+                        <div class="card_address">서울특별시 성북구 정릉동</div>
+                    </div>
+                </a>
+            </article>
+            <article class="card">
+                <h3 class="hidden">카페 정보</h3>
+                <a href="detail.html" class="flex sb">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div>
+                        <div class="card_name">믓쟁이 사자</div>
+                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                        <div class="card_description">딸기케이크가 맛있는 집</div>
+                        <div class="card_address">서울특별시 성북구 정릉동</div>
+                    </div>
+                </a>
+            </article>
+            <article class="card">
+                <h3 class="hidden">카페 정보</h3>
+                <a href="detail.html" class="flex sb">
+                    <div><img src="2.jpg" alt=""></div>
+                    <div>
+                        <div class="card_name">믓쟁이 사자</div>
+                        <div class="card_filter">아메리카노, 분위기, 딸기케이크, 주차</div>
+                        <div class="card_description">딸기케이크가 맛있는 집</div>
+                        <div class="card_address">서울특별시 성북구 정릉동</div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+    <section class="map">
+        <h2 class="hidden">지도</h2>
+        <img src="2.jpg" alt="dd">
+    </section>
+</main>
+
+<script type="text/javascript">
+    function oneCheckbox(a) {
+        var obj = document.getElementsByName("checkbox");
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i] != a) {
+                obj[i].checked = false;
+            }
+        }
+    }
+</script>
+
+
+
+출처: https://hyunssssss.tistory.com/229 [현's 블로그]
 {% endblock %}

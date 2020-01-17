@@ -53,4 +53,4 @@ def search(request):
 
 
 def move(request):
-    return render(request, 'signup2.html')
+    return render(request, 'search.html')
